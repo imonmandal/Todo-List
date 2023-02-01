@@ -1,0 +1,14 @@
+{{url_for("static", filename="relative path from static")}}
+
+
+to do create tables in database initially run in terminal ** use the below method using flask db init
+py
+from app import app, db
+with app.app_context():
+    db.create_all()
+
+
+flask db init
+flask db migrate
+flask db upgrade
+flask db downgrade

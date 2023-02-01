@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block body %}
+<div class="container my-3">
+  <h2>Add a Todo</h2>
+  <form action="/update/{{todo.id}}" method="post">
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Todo Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput"
+        placeholder="Add title"
+        name="title"
+        value="{{todo.title}}"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label"
+        >Todo Description</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput2"
+        placeholder="Add description"
+        name="desc"
+        value="{{todo.desc}}"
+      />
+    </div>
+    <button type="submit" class="btn btn-dark">Update</button>
+  </form>
+</div>
+{% endblock body %}

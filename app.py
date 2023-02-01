@@ -29,7 +29,7 @@ class Users(db.Model):  # Create table
         return f"{self.username}"
 
 
-class Todo(db.Model):  # Create table
+class Todos(db.Model):  # Create table
     id = db.Column(db.Integer, primary_key=True)  # auto increment
     username = db.Column(db.String(50), nullable=False)
     title = db.Column(db.String(200), nullable=False)
@@ -104,11 +104,11 @@ def todos():
         username = session["user"]
         title = request.form["title"]
         desc = request.form["desc"]
-        todo = Todo(username=username, title=title, desc=desc)
+        todo = Todos(username=username, title=title, desc=desc)
         db.session.add(todo)
         db.session.commit()
 
-    allTodo = Todo.query.filter_by(username=session["user"]).all()
+    allTodo = Todos.query.filter_by(username=session["user"]).all()
     # print(allTodo)
     return render_template("todos.html", allTodo=allTodo)
 
@@ -118,7 +118,7 @@ def update(id):
     if not isLogin():
         return redirect("/login")
 
-    todo = Todo.query.filter_by(id=id).first()
+    todo = Todos.query.filter_by(id=id).first()
     if request.method == "POST":
         title = request.form["title"]
         desc = request.form["desc"]
@@ -137,7 +137,7 @@ def delete(id):
     if not isLogin():
         return redirect("/login")
 
-    todo = Todo.query.filter_by(id=id).first()
+    todo = Todos.query.filter_by(id=id).first()
     db.session.delete(todo)
     db.session.commit()
     return redirect("/todos")

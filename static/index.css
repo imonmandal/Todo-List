@@ -1,0 +1,13 @@
+body {
+  background-image: url("images\\todo-img.jpg");
+  background-size: 100vw 100vh;
+}
+
+.btn {
+  background-color: rgba(0, 255, 255, 0.58);
+}
+
+.btn:hover {
+  background-color: rgba(0, 255, 255, 0.795);
+  color: black;
+}

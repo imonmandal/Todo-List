@@ -11,23 +11,24 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href={{url_for("static", filename="index.css")}} />
   </head>
-  <body class="bg-warning">
-    <h1 class="my-5 text-center p-4 bg-secondary">MyTodo</h1>
-    <div class="container my-5 d-flex flex-column">
+  <body>
+    <h1 class="text-center p-4 bg-secondary">MyTodo</h1>
+    <div class="container my-4 d-flex flex-column">
       {% if isLogin %}
       <a href="/todos" class="text-center my-2">
-        <button class="btn btn-info w-25">My Todos</button>
+        <button class="btn w-25">My Todos</button>
       </a>
       <a href="/logout" class="text-center my-2">
-        <button class="btn btn-info w-25">Logout</button>
+        <button class="btn w-25">Logout</button>
       </a>
       {% else %}
       <a href="/register" class="text-center my-2">
-        <button class="btn btn-info w-25">Register</button>
+        <button class="btn w-25">Register</button>
       </a>
       <a href="/login" class="text-center my-2">
-        <button class="btn btn-info w-25">Login</button>
+        <button class="btn w-25">Login</button>
       </a>
       {% endif %}
     </div>

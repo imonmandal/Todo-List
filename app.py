@@ -41,10 +41,7 @@ class Todos(db.Model):  # Create table
 
 
 def isLogin():
-    isLogin = True
-    if session.get("user") is None:
-        isLogin = False
-    return isLogin
+    return False if session.get("user") is None else True
 
 
 @app.route("/", methods=["GET", "POST"])

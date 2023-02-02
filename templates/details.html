@@ -1,4 +1,10 @@
-{% extends 'base.html' %} {% block body %} {% if err %}
+{% extends 'base.html' %} {% block trbtn %}
+<a href="/{{trbtn}}">
+  <button class="btn btn-outline-dark text-capitalize" type="submit">
+    {{trbtn}}
+  </button>
+</a>
+{% endblock trbtn %} {% block body %} {% if err %}
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
   <strong>Error!</strong> Invalid username or password
   <button

@@ -66,7 +66,7 @@ def register():
         db.session.commit()
         return redirect("/login")
 
-    return render_template("details.html", data="register", err=False)
+    return render_template("details.html", data="register", err=False, trbtn="login")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -86,7 +86,7 @@ def login():
                 return redirect("/todos")
         loginError = True
 
-    return render_template("details.html", data="login", err=loginError)
+    return render_template("details.html", data="login", err=loginError, trbtn="register")
 
 
 @app.route("/logout", methods=["GET", "POST"])
